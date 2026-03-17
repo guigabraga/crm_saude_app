@@ -1,7 +1,10 @@
 import type { IRoutes } from "../Schmas";
 import { Navigate } from "react-router-dom";
 import { Login } from "../pages/public";
-import { Home } from "../pages/private";
+import { Home, Patients, Appointments } from "../pages/private";
+import Homeicon from "@mui/icons-material/Home";
+import PeopleIcon from "@mui/icons-material/People";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
 export const useRoutes = () => {
 
@@ -27,7 +30,23 @@ export const useRoutes = () => {
       {
         path: "/home",
         available: true,
-        element: <Home />
+        element: <Home />,
+        title: "Inicio",
+        icon: <Homeicon />
+      },
+      {
+        path: "/patients",
+        available: true,
+        element: <Patients />,
+        title: "Pacientes",
+        icon: <PeopleIcon />
+      },
+      {
+        path: "/appointments",
+        available: true,
+        element: <Appointments />,
+        title: "Atendimentos",
+        icon: <CalendarMonthIcon />
       }
     ]
   };
