@@ -1,9 +1,8 @@
 import type { IRoutes } from "../Schemas";
 import { Navigate } from "react-router-dom";
 import { Login } from "../pages/public";
-import { Patients, Appointments } from "../pages/private";
+import { Patients } from "../pages/private";
 import PeopleIcon from "@mui/icons-material/People";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
 export const useRoutes = () => {
 
@@ -32,13 +31,6 @@ export const useRoutes = () => {
         element: <Patients />,
         title: "Pacientes",
         icon: <PeopleIcon />
-      },
-      {
-        path: "/appointments",
-        available: true,
-        element: <Appointments />,
-        title: "Atendimentos",
-        icon: <CalendarMonthIcon />
       }
     ]
   };
