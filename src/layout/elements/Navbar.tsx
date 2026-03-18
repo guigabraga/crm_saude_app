@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, IconButton, useTheme } from "@mui/material";
+import { AppBar, Toolbar } from "@mui/material";
 
 export default function Navbar() {
   return (

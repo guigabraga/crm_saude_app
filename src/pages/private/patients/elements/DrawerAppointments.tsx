@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { DrawerHeader } from "../../../../components";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import ButtonNewAppointment from "./ButtonNewAppointment";
+import DrawerAppointmentsDataTable from "./DrawerAppointmentsDataTable";
 
 export default function DrawerAppointments() {
 
@@ -12,7 +13,6 @@ export default function DrawerAppointments() {
   const drawer = queryParams.get("appointments-drawer");
   const open = drawer === "open" ? true : false;
   const patientId = queryParams.get("patient-id");
-  console.log(patientId)
 
   return (
     <Drawer
@@ -24,7 +24,7 @@ export default function DrawerAppointments() {
         "& .MuiDrawer-paper": {
           borderTopLeftRadius: 10,
           borderBottomLeftRadius: 10,
-          width: 400,
+          width: 600,
           height: "100vh",
           backgroundColor: (theme) => theme.palette.background.default,
         }
@@ -32,6 +32,7 @@ export default function DrawerAppointments() {
     >
       <Stack
         direction="column"
+        spacing={2}
       >
         <Box
           sx={{
@@ -46,40 +47,26 @@ export default function DrawerAppointments() {
             functionClose={() => navigate("/patients")}
             icon={<CalendarMonthIcon />}
           />
-          <Box
-            sx={{
-              paddingX: 2,
-              paddingTop: 2
-            }}
-          >
-            <ButtonNewAppointment patientId={Number(patientId)} />
-          </Box>
+        </Box>
+        <Box
+          sx={{
+            paddingX: 2,
+          }}
+        >
+          <ButtonNewAppointment patientId={Number(patientId)} />
         </Box>
         <Box
           sx={{
             width: "100%",
             height: "100%",
-          }}
-        >
-        </Box>
-        <Box
-          sx={{
-            width: "100%",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            paddingTop: 2
           }}
         >
-          <Stack
-            alignItems="center"
-            justifyContent="center"
-            spacing={2}
-            sx={{
-              width: "100%",
-            }}
-          >
-          </Stack>
+          <DrawerAppointmentsDataTable
+            patientId={Number(patientId)}
+          />
         </Box>
       </Stack>
     </Drawer>

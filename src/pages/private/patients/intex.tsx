@@ -1,5 +1,6 @@
 import { Box, Stack } from "@mui/material"
 import { HeaderPage, DialogNewPatient, DataTable, DialogNewAppointment, DrawerAppointments } from "./elements";
+import { DialogAppointmentDetails, DialogAppointmentEdit } from "../../../components";
 
 export default function Patients() {
   return (
@@ -19,6 +20,8 @@ export default function Patients() {
         <DialogNewPatient />
         <DialogNewAppointment />
         <DrawerAppointments />
+        <DialogAppointmentDetails />
+        <DialogAppointmentEdit />
       </Stack>
     </Box>
   )

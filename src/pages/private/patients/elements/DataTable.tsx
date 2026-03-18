@@ -37,8 +37,6 @@ export default function DataTable() {
 
   const {
     data,
-    status,
-    error
   } = useQueryPatients();
 
   const rows: GridRowsProp =
