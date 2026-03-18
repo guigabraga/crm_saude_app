@@ -1,8 +1,7 @@
-import type { IRoutes } from "../Schmas";
+import type { IRoutes } from "../Schemas";
 import { Navigate } from "react-router-dom";
 import { Login } from "../pages/public";
-import { Home, Patients, Appointments } from "../pages/private";
-import Homeicon from "@mui/icons-material/Home";
+import { Patients, Appointments } from "../pages/private";
 import PeopleIcon from "@mui/icons-material/People";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
@@ -25,14 +24,7 @@ export const useRoutes = () => {
       {
         path: "*",
         available: true,
-        element: <Navigate to="/home" replace />
-      },
-      {
-        path: "/home",
-        available: true,
-        element: <Home />,
-        title: "Inicio",
-        icon: <Homeicon />
+        element: <Navigate to="/patients" replace />
       },
       {
         path: "/patients",

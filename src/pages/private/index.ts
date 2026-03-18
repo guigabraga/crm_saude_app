@@ -1,3 +1,4 @@
-import Home from "./home";
+import Patients from "./patients/intex";
+import Appointments from "./appointments";
 
-export { Home };
+export { Patients, Appointments };

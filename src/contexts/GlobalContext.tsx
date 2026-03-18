@@ -1,5 +1,5 @@
 import React, { createContext, useState, type ReactNode } from "react";
-import type { IDataResult } from "../Schmas";
+import type { IDataResult } from "../Schemas";
 
 type TGlobalContext = {
   isGlobalLoading: boolean;

@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const token = localStorage.getItem("token");
   const [isToken, setToken] = useState(token ?? null!);
-  const [isAuth, setAuth] = useState(false);
+  const [isAuth, setAuth] = useState(true);
 
   return (
     <AuthContext.Provider
